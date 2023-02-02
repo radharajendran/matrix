@@ -37,8 +37,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         // first element of current row
         prev = matrix[row + 1][col];
 
-        // Move elements of first row
-        // from the remaining rows
+        // Move elements of first row from the remaining rows
         for (let i = col; i < n; i++) {
             curr = matrix[row][i];
             matrix[row][i] = prev;
@@ -46,10 +45,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         }
         row++;
 
-        // console.log('1st step---->', matrix, 'n-->', n, 'm-->', m);
-
-        // Move elements of last column
-        // from the remaining columns
+        // Move elements of last column from the remaining columns
         for (let i = row; i < m; i++) {
             curr = matrix[i][n - 1];
             matrix[i][n - 1] = prev;
@@ -57,10 +53,8 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         }
         n--;
 
-        // console.log('2nd step---->', matrix, 'n-->', n, 'm-->', m);
 
-        // Move elements of last row
-        // from the remaining rows
+        // Move elements of last row from the remaining rows
         if (row < m) {
             for (let i = n - 1; i >= col; i--) {
                 curr = matrix[m - 1][i];
@@ -69,10 +63,8 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
             }
         }
         m--;
-        // console.log('3rd step---->', matrix, 'n-->', n, 'm-->', m);
 
-        // Move elements of first column
-        // from the remaining rows
+        // Move elements of first column from the remaining rows
         if (col < n) {
             for (let i = m - 1; i >= row; i--) {
                 curr = matrix[i][col];
@@ -81,8 +73,6 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
             }
         }
         col++;
-
-        // console.log('4th step---->', matrix, 'n-->', n, 'm-->', m);
 
     }
 
@@ -96,8 +86,6 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         else
             result = result.concat(matrix[r]);
     }
-
-    // console.log('result----->', result);
 
     return result;
 }

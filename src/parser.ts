@@ -5,8 +5,6 @@ import {
     parse_array
 } from './utility'
 
-
-
 /**
  * Returns Boolean based on data validation
  * @param{Array} data Row from CSV
