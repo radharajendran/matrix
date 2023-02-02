@@ -1,3 +1,8 @@
+/**
+ * Method used to chunk the single array contents to multiple
+ * @param{Array} data Array neeeds to be chunk
+ * @returns{Array} Chunked array based on content
+ */
 export const parse_array = (data: string[]): string[][] => {
 
     const chunkSize = Math.sqrt(data.length);
@@ -11,6 +16,13 @@ export const parse_array = (data: string[]): string[][] => {
     return matrix;
 }
 
+/**
+ * Method used to rotate the matrix elements
+ * @param m Row length of matrix
+ * @param n Columm Length of matrix
+ * @param matrix Matrix
+ * @returns Single position rotated array
+ */
 export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
 
     let row = 0, col = 0;
@@ -34,7 +46,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         }
         row++;
 
-        console.log('1st step---->', matrix, 'n-->', n, 'm-->', m);
+        // console.log('1st step---->', matrix, 'n-->', n, 'm-->', m);
 
         // Move elements of last column
         // from the remaining columns
@@ -45,7 +57,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         }
         n--;
 
-        console.log('2nd step---->', matrix, 'n-->', n, 'm-->', m);
+        // console.log('2nd step---->', matrix, 'n-->', n, 'm-->', m);
 
         // Move elements of last row
         // from the remaining rows
@@ -57,7 +69,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
             }
         }
         m--;
-        console.log('3rd step---->', matrix, 'n-->', n, 'm-->', m);
+        // console.log('3rd step---->', matrix, 'n-->', n, 'm-->', m);
 
         // Move elements of first column
         // from the remaining rows
@@ -70,7 +82,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
         }
         col++;
 
-        console.log('4th step---->', matrix, 'n-->', n, 'm-->', m);
+        // console.log('4th step---->', matrix, 'n-->', n, 'm-->', m);
 
     }
 
@@ -85,12 +97,7 @@ export const rotate = (m: number, n: number, matrix: string[][]): string[] => {
             result = result.concat(matrix[r]);
     }
 
-    console.log('result----->', result);
+    // console.log('result----->', result);
 
     return result;
 }
-
-// module.exports = {
-//     rotate,
-//     parse_array
-// }
