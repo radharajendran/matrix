@@ -2,9 +2,9 @@
 
 Configure application
 
-npm install
+  npm install
 
 Unit test 
 
-npm run test 
+  npm run test 
 
